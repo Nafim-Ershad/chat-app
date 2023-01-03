@@ -19,6 +19,10 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         console.log(socket.id, 'has disconnected :(');
     });
+
+    socket.on('send', (data) => {
+        console.log(data);
+    })
 });
 
 server.listen(PORT, () => {

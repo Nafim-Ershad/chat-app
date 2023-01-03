@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="./app.js"></script>
     <title>Chat App</title>
 </head>
 
@@ -21,15 +19,19 @@
                 <span>I aṁ other message</span>
             </div>
         </div>
-        <form action="submit">
+        <form novalidate>
+            <!--novalidate ignores the required tag-->
 
             <label>
                 <input type="text" id="message-typed" required>
                 <span>Enter Your Message</span>
             </label>
-            <input type="submit" value="SEND">
+            <button class="send-button">SEND</button>
         </form>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./app.js" defer></script>
 </body>
 
 </html>
