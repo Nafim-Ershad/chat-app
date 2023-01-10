@@ -26,6 +26,21 @@
     border-radius: 25px;
     padding: 30px;
     background-color: whitesmoke;
+    overflow-y: auto;
+}
+
+#message-dump .joined {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+#message-dump .joined span {
+    font-size: 14px;
+    letter-spacing: 2px;
 }
 
 #message-dump .user-message-container {

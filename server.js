@@ -9,21 +9,25 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
 
+let users = {};
 //MIDDLEWARE
 app.use(express.static(path.join(__dirname + '/static')));
 
 
 io.on('connection', socket => {
-    console.log('Socket Connected', socket.id);
-
     socket.on('disconnect', () => {
         console.log(socket.id, 'has disconnected :(');
     });
 
     socket.on('send', (data) => {
-        console.log(socket);
-        io.emit("server-message", data);
-    })
+        socket.broadcast.emit("server-message", data);
+    });
+
+    socket.on('set-user', (username) => {
+        users[socket.id] = username;
+        socket.broadcast.emit('user-set', username);
+        console.log(users);
+    });
 });
 
 server.listen(PORT, () => {
