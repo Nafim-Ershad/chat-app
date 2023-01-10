@@ -27,5 +27,5 @@ io.on('connection', socket => {
 });
 
 server.listen(PORT, () => {
-    console.log(`Listening to Port: ${PORT}`);
+    console.log(`Listening http://localhost:${PORT}`);
 });
