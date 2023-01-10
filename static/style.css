@@ -29,6 +29,7 @@
 }
 
 #message-dump .user-message-container {
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -41,6 +42,7 @@
 }
 
 #message-dump .other-message-container {
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
