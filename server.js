@@ -26,7 +26,7 @@ io.on('connection', socket => {
     socket.on('set-user', (username) => {
         users[socket.id] = username;
         socket.broadcast.emit('user-set', username);
-        console.log(users);
+        // console.log(users);
     });
 });
 
